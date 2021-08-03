@@ -6,19 +6,28 @@
 <style>
 .toolbar {
 	display:flex;
+	justify-content: space-between;
+	padding-bottom:5px;
+	//padding-right:5px;
+	width:90vw;
+	
 }
 
-.label {
-	padding-left:5px;
+table {
+	width:90vw;
 }
 
 td {
 	border: 1px solid #444444;
+	padding:5px;
 }
 
-.hora {
-	display:flex;
-	flex-orientation:column;
+select {
+	font-size:2em;
+}
+input {
+	font-size:2em;
+	width:100%;
 }
 </style>
 <script>
@@ -166,17 +175,20 @@ td {
 </head>
 <body onload="load()">
 	<div class="toolbar">
-	<input type="text" id="query" onchange="popularTabela()"/>
-	<select id="origem" onchange="popularTabela()" value="TITRI">
-	</select>
-	<select id="dia" onchange="popularTabela()">
-		<option>Sábado</option>
-		<option>Domingos e Feriados</option>
-		<option>Dias Úteis</option>
-	</select>
-	<select id="hora" onchange="popularTabela()">
-	</select>
-	
+		<input type="text" id="query" onchange="popularTabela()"/>
+	</div>
+	<div class="toolbar">
+		<select id="origem" onchange="popularTabela()" value="TITRI">
+		</select>
+		<select id="hora" onchange="popularTabela()">
+		</select>
+	</div>
+	<div class="toolbar">
+		<select id="dia" onchange="popularTabela()">
+			<option>Sábado</option>
+			<option>Domingos e Feriados</option>
+			<option>Dias Úteis</option>
+		</select>
 	</div>
 	<table id="tabela" cellspacing="0">
 		
